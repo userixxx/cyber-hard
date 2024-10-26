@@ -7,12 +7,12 @@
           <button class="nav-button">       
           </button>
           <button class="nav-button central-button">
-            <img src="src/logo/navfooter/volume 1.svg" alt="Central Icon">
+            <img src="../../../img/logo/navfooter/volume 1.svg" alt="Central Icon">
           </button>
           <button class="nav-button">        
           </button>
           <button class="nav-button">
-            <img src="src/logo/navfooter/menu-add.svg" alt="Icon 5">
+            <img src="../../../img/logo/navfooter/menu-add.svg" alt="Icon 5">
           </button>
         </div>
       </div>
