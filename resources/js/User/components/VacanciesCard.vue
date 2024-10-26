@@ -14,7 +14,7 @@
         </div>
         <div class="company">
             <div class="name_company">Центр-Инвест</div>
-            <img src="src/logo/invest.svg" alt="invest_logo" class="company_logo">
+            <img src="../../../img/logo/invest.svg" alt="invest_logo" class="company_logo">
         </div>
         <div class="down_bar f">
             <div class="responss f">
@@ -23,7 +23,7 @@
             </div>
             <div class="fresh f">
                 <div class="percent">83%</div>
-                <img src="src/logo/pie-chart-01.png" alt="" class="percent_img">
+                <img src="../../../img/logo/pie-chart-01.png" alt="" class="percent_img">
             </div>
         </div>
 
