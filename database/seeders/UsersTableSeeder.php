@@ -19,7 +19,7 @@ class UsersTableSeeder extends Seeder
             'password' => Hash::make('password123'),
             'institute_id' => 1,
             'options' => json_encode([
-                'academy_group' => 'ИБ-311'
+                'academy_group' => 'ИБ-311',
             ]),
             'created_at' => now(),
             'updated_at' => now(),
