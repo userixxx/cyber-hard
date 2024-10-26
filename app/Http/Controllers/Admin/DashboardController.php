@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Enums\WeekDay;
+use App\Enums\WeekType;
 use App\Http\Controllers\Controller;
 use App\Models\ListSites;
 use App\Models\User;
+use App\Services\ScheduleService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 use App\Services\FtpService;
@@ -16,9 +19,16 @@ class DashboardController extends Controller
      * Display a listing of the resource.
      */
 
-    public function index(Request $request)
+    public function index(ScheduleService $scheduleService)
     {
-       //
+        try {
+            $user = User::find(1);
+            $schedule = $scheduleService->getScheduleForRSUE($user);
+
+            return response()->json($schedule);
+        } catch (\Exception $e) {
+            return response()->json(['error' => $e->getMessage()], 500);
+        }
     }
 
     /**
