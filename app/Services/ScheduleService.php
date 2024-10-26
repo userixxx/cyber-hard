@@ -4,6 +4,8 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Http;
 use App\Models\User;
+use App\Enums\WeekType;
+use App\Enums\WeekDay;
 
 class ScheduleService
 {
@@ -17,10 +19,7 @@ class ScheduleService
             throw new \Exception('Группа не указана для пользователя.');
         }
 
-        // формируем URL запроса с группой пользователя
         $url = $this->rsueBaseUrl . urlencode($group);
-
-        // отправляем запрос к API
         $response = Http::get($url);
 
         if ($response->failed()) {
@@ -28,10 +27,41 @@ class ScheduleService
         }
 
         $data = $response->json();
-        if (!is_array($data)) {
+        if (!is_array($data) || !isset($data['weeks'])) {
             throw new \Exception('Некорректный формат данных расписания.');
         }
 
+        // Форматирование данных расписания с использованием приватного метода
+        foreach ($data['weeks'] as &$week) {
+            foreach ($week['days'] as &$day) {
+                $day['pairs'] = $this->formatPairsOnRSUE($day['pairs']);
+            }
+        }
+
         return $data;
+    }
+
+    private function formatPairsOnRSUE(array $pairs)
+    {
+        $formattedPairs = [];
+
+        foreach ($pairs as $pair) {
+            $lessons = collect($pair['lessons'])->map(function ($lesson) use ($pair) {
+                return [
+                    'subject' => $lesson['subject'],
+                    'teacher' => $lesson['teacher']['name'] ?? 'N/A',
+                    'audience' => $lesson['audience'] ?? 'N/A',
+                    'time' => "{$pair['startTime']} - {$pair['endTime']}",
+                ];
+            });
+
+            $formattedPairs[] = [
+                'pair_id' => $pair['id'],
+                'time' => "{$pair['startTime']} - {$pair['endTime']}",
+                'lessons' => $lessons->toArray(),
+            ];
+        }
+
+        return $formattedPairs;
     }
 }

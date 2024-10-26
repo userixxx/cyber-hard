@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Enums\WeekDay;
+use App\Enums\WeekType;
 use App\Http\Controllers\Controller;
 use App\Models\ListSites;
 use App\Models\User;
