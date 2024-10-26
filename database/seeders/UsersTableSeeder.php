@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
@@ -18,9 +17,12 @@ class UsersTableSeeder extends Seeder
             'name' => 'John Doe',
             'email' => 'john.doe@example.com',
             'password' => Hash::make('password123'),
+            'institute_id' => 1,
+            'options' => json_encode([
+                'academy_group' => 'ИБ-311'
+            ]),
             'created_at' => now(),
             'updated_at' => now(),
         ]);
-
     }
 }
