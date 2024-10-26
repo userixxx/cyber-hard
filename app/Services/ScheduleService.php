@@ -2,8 +2,8 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Facades\Http;
 use App\Models\User;
+use Illuminate\Support\Facades\Http;
 
 class ScheduleService
 {
@@ -13,11 +13,11 @@ class ScheduleService
     {
         $group = $user->options['academy_group'] ?? null;
 
-        if (!$group) {
+        if (! $group) {
             throw new \Exception('Группа не указана для пользователя.');
         }
 
-        $url = $this->rsueBaseUrl . urlencode($group);
+        $url = $this->rsueBaseUrl.urlencode($group);
         $response = Http::get($url);
 
         if ($response->failed()) {
@@ -25,7 +25,7 @@ class ScheduleService
         }
 
         $data = $response->json();
-        if (!is_array($data) || !isset($data['weeks'])) {
+        if (! is_array($data) || ! isset($data['weeks'])) {
             throw new \Exception('Некорректный формат данных расписания.');
         }
 
