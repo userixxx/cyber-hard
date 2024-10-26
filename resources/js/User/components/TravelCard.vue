@@ -56,6 +56,16 @@
     transform:translateY(28px);
     margin:0 20px
 }
-
+.buy {
+    justify-content:center
+}
+.price {
+    transform:translateY(18px)
+}
+.btn {
+    border:1px solid #000;
+    border-radius:10px;
+    margin:10px
+}
 
 </style>
