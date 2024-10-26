@@ -55,6 +55,21 @@
 </template>
 
 <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const inputField = document.querySelector('.custom-input');
+
+    inputField.addEventListener('focus', () => {
+        inputField.placeholder = ''; 
+        inputField.value = ''; 
+    });
+    
+    inputField.addEventListener('blur', () => {
+        if (inputField.value === '') {
+            inputField.placeholder = 'Введите текст'; 
+        }
+    });
+});
+
 
 </script>
 
