@@ -2,23 +2,17 @@
 
 namespace App\Http\Controllers\Admin;
 
-use App\Enums\WeekDay;
-use App\Enums\WeekType;
 use App\Http\Controllers\Controller;
-use App\Models\ListSites;
 use App\Models\User;
 use App\Services\ScheduleService;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
-use App\Services\FtpService;
-use Inertia\Inertia;
 
 class DashboardController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-
     public function index(ScheduleService $scheduleService)
     {
         try {

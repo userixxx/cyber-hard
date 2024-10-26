@@ -56,16 +56,16 @@ return [
             'throw' => false,
         ],
         'ftp' => [
-            'driver'   => 'ftp',
-            'host'     => '37.140.192.16',
+            'driver' => 'ftp',
+            'host' => '37.140.192.16',
             'username' => 'u1277887_parsing',
             'password' => 'DdmcyU~6V^yHnxu',
 
-            'port'     => 21,
-            'root'     => '',
-            'passive'  => true,
-            'ssl'      => false,
-            'timeout'  => 30,
+            'port' => 21,
+            'root' => '',
+            'passive' => true,
+            'ssl' => false,
+            'timeout' => 30,
         ],
     ],
 
