@@ -16,6 +16,7 @@ return new class extends Migration
             $table->date('birth_date')->nullable(); // дата рождения
             $table->foreignId('institute_id')->nullable()->constrained()->onDelete('set null'); // связь с институтом
             $table->string('phone_number')->nullable(); // номер телефона
+            $table->json('options')->nullable(); // номер телефона
         });
 
     }
