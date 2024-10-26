@@ -18,10 +18,5 @@ Route::get('/', function () {
     return view('home'); // Отправка на home.blade.php
 });
 
-//Route::get('/dashboard', function () {
-//    return view('dashboard'); // Отправка на dashboard.blade.php
-//});
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/card-detail/{site}/{date}', [DashboardController::class, 'showCardDetail']);
-
-//Route::resource('dashboard', Admin\DashboardController::class);
