@@ -4,8 +4,6 @@ namespace App\Services;
 
 use Illuminate\Support\Facades\Http;
 use App\Models\User;
-use App\Enums\WeekType;
-use App\Enums\WeekDay;
 
 class ScheduleService
 {
