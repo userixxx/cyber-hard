@@ -12,43 +12,14 @@ use Inertia\Inertia;
 
 class DashboardController extends Controller
 {
-    protected $ftpService;
-
-    public function __construct(FtpService $ftpService)
-    {
-        $this->ftpService = $ftpService;
-    }
     /**
      * Display a listing of the resource.
      */
 
     public function index(Request $request)
     {
-        $sites = ListSites::all();
-
-        return Inertia::render('Dashboard', [
-            'sites' => $sites,
-        ]);
+       //
     }
-    public function showCardDetail($siteName, $date)
-    {
-        $filePath = "/$siteName/reports/$date/data.json";
-        $data = $this->ftpService->getFile($filePath);
-
-        if ($data) {
-            $decodedData = json_decode($data, true);
-            return Inertia::render('CardDetail', [
-                'siteName' => $siteName,
-                'date' => $date,
-                'data' => $decodedData
-            ]);
-        }
-
-        return Inertia::render('CardDetail', [
-            'error' => 'Не удалось получить данные для этого сайта.'
-        ]);
-    }
-
 
     /**
      * Show the form for creating a new resource.
