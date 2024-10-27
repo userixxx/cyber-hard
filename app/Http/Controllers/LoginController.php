@@ -36,7 +36,8 @@ class LoginController extends Controller
             $request->session()->regenerate();
 
             // Перенаправление после успешного входа
-            return redirect()->intended('home');
+            return redirect()->intended(route('hackathon.page'));
+
         }
 
         // Если аутентификация не удалась

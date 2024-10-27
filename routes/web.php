@@ -44,7 +44,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/flag', [FlagBigPageController::class, 'index']);
     Route::get('/flat-card', [FlatCardController::class, 'index']);
     Route::get('/hackathon-card', [HackathonCardController::class, 'index']);
-    Route::get('/hackathon-page', [HackathonPageController::class, 'index']);
+    Route::get('/hackathon-page', [HackathonPageController::class, 'index'])->name('hackathon.page');
     Route::get('/news', [NewsController::class, 'index']);
     Route::get('/schedule-card', [ScheduleCardController::class, 'index']);
     Route::get('/search-section', [SearchSectionController::class, 'index']);
