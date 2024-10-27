@@ -48,5 +48,25 @@ export default {
     font-family:Roboto;
     margin-right:8px
 }
+body {
+  margin: 0;
+  padding: 0;
+  padding-bottom: 100px; }
 
+ul {
+  list-style-type: none; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+a:hover, a:focus {
+  text-decoration: none;
+  font-weight: normal;
+  color: inherit; }
+
+header {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
 </style>
