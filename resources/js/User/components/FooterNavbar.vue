@@ -21,13 +21,13 @@
 </template>
   
 <script>
-// document.addEventListener('DOMContentLoaded', () => {
-//     const box = document.querySelector('.central-button');
+document.addEventListener('DOMContentLoaded', () => {
+    const box = document.querySelector('.central-button');
 
-//     box.addEventListener('click', () => {
-//         box.classList.toggle('active');
-//     });
-// });
+    box.addEventListener('click', () => {
+        box.classList.toggle('active');
+    });
+});
 
 </script>
   

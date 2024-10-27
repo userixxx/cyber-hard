@@ -55,6 +55,7 @@
 </template>
 
 <script>
+
 document.addEventListener("DOMContentLoaded", function() {
     const inputField = document.querySelector('.custom-input');
 
