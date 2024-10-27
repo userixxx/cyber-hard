@@ -2,13 +2,13 @@
     <div class="container">
     <header>
         <div class="row">
-            <div class="col-md-4 col-lg-5 col-xl-6 title_logo">HELPER</div>
+            <div class="col-md-4 col-lg-5 col-xl-6 title_logo">CAMPUS</div>
             <div class="col-md-7 col-lg-6 col-xl-5 ">
                 <ul class="navbar">
-                    <li class="navbar_item"><a href="" class="navbar_link">Услуги</a></li>
-                    <li class="navbar_item"><a href="" class="navbar_link">Спорт</a></li>
-                    <li class="navbar_item"><a href="" class="navbar_link">Услуги</a></li>
-                    <li class="navbar_item"><a href="" class="navbar_link">Спорт</a></li>
+<!--                    <li class="navbar_item"><a href="" class="navbar_link">Услуги</a></li>-->
+<!--                    <li class="navbar_item"><a href="" class="navbar_link">Спорт</a></li>-->
+<!--                    <li class="navbar_item"><a href="" class="navbar_link">Услуги</a></li>-->
+<!--                    <li class="navbar_item"><a href="" class="navbar_link">Спорт</a></li>-->
 
                 </ul>
             </div>
