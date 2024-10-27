@@ -1,11 +1,21 @@
 <template>
-  <router-view></router-view>
+  <div id="app">
+    <!-- Общий хедер -->
+    <Header />
+
+    <!-- Основной контент страницы -->
+    <slot />
+
+    <!-- Общий футер -->
+    <Footer />
+  </div>
 </template>
 
 <script setup>
-// Ваш код, если есть
+import Header from './User/components/Header.vue';
+import Footer from './User/components/FooterNavbar.vue';
 </script>
 
 <style scoped>
-/* Ваши стили, если есть */
+/* Общие стили, если есть */
 </style>
