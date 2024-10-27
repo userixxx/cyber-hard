@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Services\VoiceTextService;
 use App\Models\Message;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class VoiceTextController extends Controller
 {
@@ -49,24 +50,24 @@ class VoiceTextController extends Controller
     public function generateText(Request $request)
     {
         $text = $request->input('text');
-        $userId = $request->user()->id;
+        $userId = Auth::id();
 
         // Сохранение сообщения пользователя
-        Message::create([
-            'user_id' => $userId,
-            'message' => $text,
-            'sender' => 'user'
-        ]);
+//        Message::create([
+//            'user_id' => $userId,
+//            'message' => $text,
+//            'sender' => 'user'
+//        ]);
 
         // Генерация текста от ChatGPT
         $textData = $this->voiceTextService->generateText($text);
 
         // Сохранение ответа бота
-        Message::create([
-            'user_id' => $userId,
-            'message' => $textData['response'] ?? 'Text generated', // или другое сообщение
-            'sender' => 'bot'
-        ]);
+//        Message::create([
+//            'user_id' => $userId,
+//            'message' => $textData['response'] ?? 'Text generated', // или другое сообщение
+//            'sender' => 'bot'
+//        ]);
 
         return response()->json($textData);
     }
