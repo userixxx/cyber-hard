@@ -1,7 +1,7 @@
 <template>
     <div class="container">
     <div class="user_profile">
-        <img src="../../../img/logo/aik.svg" alt="" class="aik_img">
+        <img src="/public/img/logo/aik.svg" alt="" class="aik_img">
         <div class="aik_name tac">Айк Бабаханян</div>
         <div class="aik_number tac">+7 777 777 77 77</div>
         <div class="aik_mail tac">SettrihYonovich@yandex.ru</div>

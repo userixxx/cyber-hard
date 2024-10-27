@@ -7,12 +7,12 @@
           <button class="nav-button">       
           </button>
           <button class="nav-button central-button">
-            <img src="../../../img/logo/navfooter/volume 1.svg" alt="Central Icon">
+            <img src="/public/img/logo/navfooter/volume 1.svg" alt="Central Icon">
           </button>
           <button class="nav-button">        
           </button>
           <button class="nav-button">
-            <img src="../../../img/logo/navfooter/menu-add.svg" alt="Icon 5">
+            <img src="/public/img/logo/navfooter/menu-add.svg" alt="Icon 5">
           </button>
         </div>
       </div>
@@ -21,13 +21,16 @@
 </template>
   
 <script>
-document.addEventListener('DOMContentLoaded', () => {
-    const box = document.querySelector('.central-button');
-
-    box.addEventListener('click', () => {
-        box.classList.toggle('active');
-    });
-});
+export default {
+  name: "FooterNavbar",
+}
+// document.addEventListener('DOMContentLoaded', () => {
+//     const box = document.querySelector('.central-button');
+//
+//     box.addEventListener('click', () => {
+//         box.classList.toggle('active');
+//     });
+// });
 
 </script>
   

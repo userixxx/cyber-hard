@@ -13,7 +13,7 @@
         </div>
         <div class="place ">
             <div class="place_name">Манеж ДГТУ</div>
-            <img src="../../../img/logo/point.svg" alt="" class="place_img">
+            <img src="/public/img/logo/point.svg" alt="" class="place_img">
         </div>
         
     </div>

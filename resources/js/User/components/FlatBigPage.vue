@@ -3,16 +3,16 @@
     <div id="simpleCarousel" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
-            <img src="../../../img/hata_big.png" class="d-block w-100" alt="Image 1">
+            <img src="/public/img/hata_big.png" class="d-block w-100" alt="Image 1">
           </div>
           <div class="carousel-item">
-            <img src="../../../img/hata_big.png" class="d-block w-100" alt="Image 2">
+            <img src="/public/img/hata_big.png" class="d-block w-100" alt="Image 2">
           </div>
           <div class="carousel-item">
-            <img src="../../../img/hata_big.png" class="d-block w-100" alt="Image 3">
+            <img src="/public/img/hata_big.png" class="d-block w-100" alt="Image 3">
           </div>
           <div class="carousel-item">
-            <img src="../../../img/hata_big.png" class="d-block w-100" alt="Image 4">
+            <img src="/public/img/hata_big.png" class="d-block w-100" alt="Image 4">
           </div>
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#simpleCarousel" data-bs-slide="prev">
@@ -32,7 +32,7 @@
         <button class="btn big_btn b">Написать</button>
     </div>
     <div class="hata_lock f">
-        <img src="../../../img/logo/pin-location.svg" alt="" class="img_point mr_1">
+        <img src="/public/img/logo/pin-location.svg" alt="" class="img_point mr_1">
 
         <div class="solary ">р-н Ворошиловский <br> ул. Ларина 42 с2 </div>
     </div>  

@@ -3,39 +3,39 @@
     <div class="second_section">        
         <ul class="second_navbar">
             <li class="second_navbar_item">
-                <img src="../../../img/logo/point.svg" alt="" class="second_navbar_img">
+                <img src="/public/img/logo/point.svg" alt="" class="second_navbar_img">
                 <div class="second_navbar_descr">Автобус</div>
             </li>
             <li class="second_navbar_item">
-                <img src="../../../img/logo/credit-card.svg" alt="" class="second_navbar_img">
+                <img src="/public/img/logo/credit-card.svg" alt="" class="second_navbar_img">
                 <div class="second_navbar_descr">Стипендия</div>
             </li>
             <li class="second_navbar_item">
-                <img src="../../../img/logo/home.svg" alt="" class="second_navbar_img">
+                <img src="/public/img/logo/home.svg" alt="" class="second_navbar_img">
                 <div class="second_navbar_descr">Аренда</div>
             </li>
             <li class="second_navbar_item">
-                <img src="../../../img/logo/burger.svg" alt="" class="second_navbar_img">
+                <img src="/public/img/logo/burger.svg" alt="" class="second_navbar_img">
                 <div class="second_navbar_descr">Столовая</div>
             </li>
             <li class="second_navbar_item">
-                <img src="../../../img/logo/book.svg" alt="" class="second_navbar_img">
+                <img src="/public/img/logo/book.svg" alt="" class="second_navbar_img">
                 <div class="second_navbar_descr">Расписание</div>
             </li>
             <li class="second_navbar_item">
-                <img src="../../../img/logo/fire.svg" alt="" class="second_navbar_img">
+                <img src="/public/img/logo/fire.svg" alt="" class="second_navbar_img">
                 <div class="second_navbar_descr">Мероприятия</div>
             </li>
             <li class="second_navbar_item">
-                <img src="../../../img/logo/drama.svg" alt="" class="second_navbar_img">
+                <img src="/public/img/logo/drama.svg" alt="" class="second_navbar_img">
                 <div class="second_navbar_descr">Театры</div>
             </li>
             <li class="second_navbar_item">
-                <img src="../../../img/logo/moon.svg" alt="" class="second_navbar_img">
+                <img src="/public/img/logo/moon.svg" alt="" class="second_navbar_img">
                 <div class="second_navbar_descr">Правила</div>
             </li>
             <li class="second_navbar_item">
-                <img src="../../../img/logo/cross.svg" alt="" class="second_navbar_img">
+                <img src="/public/img/logo/cross.svg" alt="" class="second_navbar_img">
                 <div class="second_navbar_descr">Здоровье</div>
             </li>
         </ul>

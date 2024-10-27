@@ -6,22 +6,25 @@
             <div class="col-md-7 col-lg-6 col-xl-5 ">
                 <ul class="navbar">
                     <li class="navbar_item"><a href="" class="navbar_link">Услуги</a></li>
-                    <li class="navbar_item"><a href="" class="navbar_link">Экскорт</a></li>
+                    <li class="navbar_item"><a href="" class="navbar_link">Спорт</a></li>
                     <li class="navbar_item"><a href="" class="navbar_link">Услуги</a></li>
-                    <li class="navbar_item"><a href="" class="navbar_link">Экскорт</a></li>
-                    
+                    <li class="navbar_item"><a href="" class="navbar_link">Спорт</a></li>
+
                 </ul>
             </div>
-            <div class="col-md-1 col-lg-1 user"><img src="src/img/user.png" alt="" class="img_user"></div>
+            <div class="col-md-1 col-lg-1 user"><img src="/public/img/user.png" alt="" class="img_user"></div>
         </div>
     </header>
 
 
 </div>
-    
+
 </template>
 
 <script>
+export default {
+  name: "Header",
+}
 
 </script>
 
