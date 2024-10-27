@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\Admin\DashboardController;
@@ -25,21 +26,29 @@ use App\Http\Controllers\VacanciesCardController;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+// Маршрут для домашней страницы, доступен для всех
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
 
+// Маршруты для входа и выхода, доступны для всех
+Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [LoginController::class, 'login']);
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/card-detail/{site}/{date}', [DashboardController::class, 'showCardDetail']);
-
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-Route::get('/card-detail/{site}/{date}', [DashboardController::class, 'showCardDetail']);
-
-Route::get('/chat', [ChatController::class, 'index']);
-Route::get('/flag', [FlagBigPageController::class, 'index']);
-Route::get('/flat-card', [FlatCardController::class, 'index']);
-Route::get('/hackathon-card', [HackathonCardController::class, 'index']);
-Route::get('/hackathon-page', [HackathonPageController::class, 'index']);
-Route::get('/news', [NewsController::class, 'index']);
-Route::get('/schedule-card', [ScheduleCardController::class, 'index']);
-Route::get('/search-section', [SearchSectionController::class, 'index']);
-Route::get('/travel-card', [TravelCardController::class, 'index']);
-Route::get('/user-sections', [UserSectionsController::class, 'index']);
-Route::get('/vacancies-card', [VacanciesCardController::class, 'index']);
+// Маршруты с middleware 'auth', доступные только для авторизованных пользователей
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/card-detail/{site}/{date}', [DashboardController::class, 'showCardDetail']);
+    Route::get('/chat', [ChatController::class, 'index']);
+    Route::get('/flag', [FlagBigPageController::class, 'index']);
+    Route::get('/flat-card', [FlatCardController::class, 'index']);
+    Route::get('/hackathon-card', [HackathonCardController::class, 'index']);
+    Route::get('/hackathon-page', [HackathonPageController::class, 'index']);
+    Route::get('/news', [NewsController::class, 'index']);
+    Route::get('/schedule-card', [ScheduleCardController::class, 'index']);
+    Route::get('/search-section', [SearchSectionController::class, 'index']);
+    Route::get('/travel-card', [TravelCardController::class, 'index']);
+    Route::get('/user-sections', [UserSectionsController::class, 'index']);
+    Route::get('/vacancies-card', [VacanciesCardController::class, 'index']);
+});
