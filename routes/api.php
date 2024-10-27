@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\PaymentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -14,11 +15,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/payment', function (Request $request) {
-    // Пример обработки данных
-    $userId = $request->input('user_id');
-    $amount = $request->input('amount');
 
-    // Здесь можно выполнить сохранение в базу данных или любую другую логику
-    return response()->json(['status' => 'Payment processed', 'user_id' => $userId, 'amount' => $amount]);
-});
+Route::post('/payment', [PaymentController::class, 'processPayment']);

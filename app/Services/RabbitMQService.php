@@ -21,6 +21,18 @@ class RabbitMQService
         $this->channel = $this->connection->channel();
     }
 
+    // Метод для отправки сообщения в очередь
+    public function publishMessage($queue, $message)
+    {
+        // Объявляем очередь, если она не существует
+        $this->channel->queue_declare($queue, false, true, false, false);
+
+        // Создаем сообщение и публикуем его в очередь
+        $msg = new AMQPMessage($message);
+        $this->channel->basic_publish($msg, '', $queue);
+    }
+
+    // Метод для прослушивания сообщений (если нужен)
     public function listenQueue($queue, $callback)
     {
         $this->channel->queue_declare($queue, false, true, false, false);
