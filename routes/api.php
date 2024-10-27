@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\VoiceTextController;
 use App\Http\Controllers\PaymentController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
@@ -15,5 +16,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/generate-voice', [VoiceTextController::class, 'generateVoice']);
+Route::post('/generate-text', [VoiceTextController::class, 'generateText']);
+Route::post('/generate-text-and-voice', [VoiceTextController::class, 'generateTextAndVoice']);
 
 Route::post('/payment', [PaymentController::class, 'processPayment']);
