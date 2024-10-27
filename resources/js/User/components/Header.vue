@@ -2,7 +2,7 @@
     <div class="container">
     <header>
         <div class="row">
-            <div class="col-md-4 col-lg-5 col-xl-6 title_logo">CAMPUS</div>
+            <div class="col-md-4 col-lg-5 col-xl-6 title_logo" @click="navigateTo('/user-sections')" style="cursor: pointer;">CAMPUS</div>
             <div class="col-md-7 col-lg-6 col-xl-5 ">
                 <ul class="navbar">
 <!--                    <li class="navbar_item"><a href="" class="navbar_link">Услуги</a></li>-->
@@ -12,7 +12,7 @@
 
                 </ul>
             </div>
-            <div class="col-md-1 col-lg-1 user"><img src="/public/img/user.png" alt="" class="img_user"></div>
+            <div class="col-md-1 col-lg-1 user"@click="navigateTo('/user-sections')" style="cursor: pointer;"><img src="/public/img/user.png" alt="" class="img_user"></div>
         </div>
     </header>
 
@@ -22,8 +22,16 @@
 </template>
 
 <script>
+import {Inertia} from "@inertiajs/inertia";
+
 export default {
   name: "Header",
+
+  methods: {
+    navigateTo(route) {
+      Inertia.visit(route);
+    },
+  },
 }
 
 </script>
