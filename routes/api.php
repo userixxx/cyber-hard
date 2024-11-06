@@ -16,8 +16,3 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::post('/generate-voice', [VoiceTextController::class, 'generateVoice']);
-Route::post('/generate-text', [VoiceTextController::class, 'generateText']);
-Route::post('/generate-text-and-voice', [VoiceTextController::class, 'generateTextAndVoice']);
-
-Route::post('/payment', [PaymentController::class, 'processPayment']);

@@ -38,17 +38,5 @@ Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
 // Маршруты с middleware 'auth', доступные только для авторизованных пользователей
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
-    Route::get('/card-detail/{site}/{date}', [DashboardController::class, 'showCardDetail']);
     Route::get('/chat', [ChatController::class, 'index']);
-    Route::get('/flag', [FlagBigPageController::class, 'index']);
-    Route::get('/flat-card', [FlatCardController::class, 'index']);
-    Route::get('/hackathon-card', [HackathonCardController::class, 'index']);
-    Route::get('/hackathon-page', [HackathonPageController::class, 'index'])->name('hackathon.page');
-    Route::get('/news', [NewsController::class, 'index']);
-    Route::get('/schedule-card', [ScheduleCardController::class, 'index']);
-    Route::get('/search-section', [SearchSectionController::class, 'index']);
-    Route::get('/travel-card', [TravelCardController::class, 'index']);
-    Route::get('/user-sections', [UserSectionsController::class, 'index']);
-    Route::get('/vacancies-card', [VacanciesCardController::class, 'index']);
 });
