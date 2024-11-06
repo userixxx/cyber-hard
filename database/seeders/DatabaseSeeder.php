@@ -20,8 +20,6 @@ class DatabaseSeeder extends Seeder
         // ]);
 
         // TODO: доделать пользовательский сидр
-        $this->call(InstituteSeeder::class);
         $this->call(UsersTableSeeder::class);
-        $this->call(QuestionSeeder::class);
     }
 }

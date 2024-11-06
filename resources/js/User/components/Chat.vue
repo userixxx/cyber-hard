@@ -76,10 +76,10 @@ export default {
   background-repeat: no-repeat; }
 .input-container .icon.clip-icon {
   left: 20px;
-  background-image: url("/public/img/logo/attachments-02.svg"); }
+  background-image: url("/img/logo/attachments-02.svg"); }
 .input-container .icon.mic-icon {
   right: 20px;
-  background-image: url("/public/img/logo/mic-on.svg"); }
+  background-image: url("/img/logo/mic-on.svg"); }
 
 .activity {
   display: flex;
