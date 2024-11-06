@@ -17,10 +17,6 @@ class UsersTableSeeder extends Seeder
             'name' => 'John Doe',
             'email' => 'test@mail.ru',
             'password' => Hash::make('123123123'),
-            'institute_id' => 1,
-            'options' => json_encode([
-                'academy_group' => 'ИБ-311',
-            ]),
             'created_at' => now(),
             'updated_at' => now(),
         ]);
