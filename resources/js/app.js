@@ -6,15 +6,14 @@ import AppLayout from './App.vue';
 
 const components = {
     Header: () => import('./User/components/Header.vue'),
-    Chat: () => import('./User/components/Chat.vue'),
+    Chat: () => import('./User/pages/Chat.vue'),
     FooterNavbar: () => import('./User/components/FooterNavbar.vue'),
-    // Добавьте другие компоненты по мере необходимости
 };
 
 createInertiaApp({
     resolve: async name => {
         const cleanName = name.split('/').pop();
-        console.log(name, cleanName);
+
         if (components[cleanName]) {
             let page = await components[cleanName]();
             page.default.layout = page.default.layout || AppLayout;
