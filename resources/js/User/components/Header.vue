@@ -86,8 +86,8 @@ export default {
     console.log(this.$page.props.currentLang);
     return {
       dropdownVisible: false,
-      currentLang: this.$page.props.currentLang || 'en', // Дефолтный язык
-      currentFlag: `/img/flags/${this.$page.props.currentLang || 'en'}.jpg`,
+      currentLang: this.$page.props.currentLang || 'ru', // Дефолтный язык
+      currentFlag: `/img/flags/${this.$page.props.currentLang || 'ru'}.jpg`,
     };
   },
   methods: {
