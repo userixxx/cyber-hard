@@ -19,7 +19,7 @@
                 </a>
               </li>
 
-              <li class="dropdown d-none d-md-inline-block">
+              <li class="dropdown d-md-inline-block">
                 <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" @click.prevent="toggleDropdown" role="button" aria-haspopup="false" aria-expanded="false">
                   <img :src="currentFlag" :alt="`${currentLang}`" class="me-0 me-sm-1" height="18">
                 </a>
