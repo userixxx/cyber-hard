@@ -7,6 +7,7 @@ import AppLayout from './App.vue';
 const components = {
     Header: () => import('./User/components/Header.vue'),
     Chat: () => import('./User/pages/Chat.vue'),
+    Home: () => import('./User/pages/Home.vue'),
     FooterNavbar: () => import('./User/components/FooterNavbar.vue'),
 };
 
