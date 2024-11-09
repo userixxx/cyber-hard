@@ -2,9 +2,12 @@
 
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\LoginController;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers;
 use App\Http\Controllers\ChatController;
+use Illuminate\Support\Facades\Session;
 use Inertia\Inertia;
 
 /*
@@ -21,6 +24,14 @@ use Inertia\Inertia;
 Route::get('/', function () {
     return redirect()->route('home.page');
 });
+
+Route::post('/api/change-language', function (Request $request) {
+    $lang = $request->input('lang');
+    Session::put('locale', $lang);
+    App::setLocale($lang);
+    return response()->json(['success' => true, 'language' => $lang]);
+})->name('change.language');
+
 
 // Маршруты для входа и выхода, доступны для всех
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
