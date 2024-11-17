@@ -1,8 +1,12 @@
 import { createApp, h } from 'vue';
+import { createPinia } from 'pinia';
 import { createInertiaApp } from '@inertiajs/inertia-vue3';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import AppLayout from './App.vue';
+import i18n from './i18n';
+
+const pinia = createPinia();
 
 const components = {
     Header: () => import('./User/components/Header.vue'),
@@ -26,6 +30,8 @@ createInertiaApp({
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
             .use(plugin)
+            .use(pinia)
+            .use(i18n)
             .mount(el);
     },
 });
