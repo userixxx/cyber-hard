@@ -25,12 +25,18 @@ Route::get('/', function () {
     return redirect()->route('home.page');
 });
 
+// API маршрут для смены языка
 Route::post('/api/change-language', function (Request $request) {
     $lang = $request->input('lang');
     Session::put('locale', $lang);
     App::setLocale($lang);
     return response()->json(['success' => true, 'language' => $lang]);
 })->name('change.language');
+
+// API маршрут для получения переводов из header.json
+Route::get('/api/translations/header', function () {
+    return response()->json(trans('header'));
+})->name('translations.header');
 
 
 // Маршруты для входа и выхода, доступны для всех

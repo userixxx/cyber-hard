@@ -2,7 +2,7 @@
   <header>
     <div class="row mt-4">
       <div class="col-md-4 col-lg-5 col-xl-6 title_logo">ICM</div>
-      <div class="col-md-7 col-lg-6 col-xl-5 ">
+      <div class="col-md-7 col-lg-6 col-xl-5">
         <div class="navbar-custom">
           <div class="topbar">
             <div class="topbar-menu d-flex align-items-center gap-lg-2 gap-1">
@@ -15,26 +15,41 @@
             <ul class="topbar-menu d-flex align-items-center gap-4">
               <li class="d-none d-md-inline-block">
                 <a class="nav-link" href="#" data-bs-toggle="fullscreen">
-                  <i class="mdi mdi-fullscreen font-size-24"></i>
+                  <i class="mdi mdi-fullscreen font-size-24"></i> {{ $t('fullscreen') }}
                 </a>
               </li>
 
+
               <li class="dropdown d-md-inline-block">
-                <a class="nav-link dropdown-toggle waves-effect waves-light arrow-none" @click.prevent="toggleDropdown" role="button" aria-haspopup="false" aria-expanded="false">
-                  <img :src="currentFlag" :alt="`${currentLang}`" class="me-0 me-sm-1" height="18">
+                <a
+                    class="nav-link dropdown-toggle waves-effect waves-light arrow-none"
+                    @click.prevent="toggleDropdown"
+                    role="button"
+                    aria-haspopup="false"
+                    aria-expanded="false"
+                >
+                  <img :src="languageStore.currentFlag" :alt="languageStore.currentLang" class="me-0 me-sm-1" height="18">
                 </a>
-                <div :class="['dropdown-menu', 'dropdown-menu-end', 'dropdown-menu-animated', { show: dropdownVisible }]">
+                <div :class="['dropdown-menu', 'dropdown-menu-end', 'dropdown-menu-animated', { show: languageStore.dropdownVisible }]">
+                  <a @click.prevent="changeLanguage('en')" class="dropdown-item">
+                    <img src="/public/img/flags/en.jpg" alt="de-flag" class="me-1" height="12">
+                    <span class="align-middle">English</span>
+                  </a>
                   <a @click.prevent="changeLanguage('de')" class="dropdown-item">
-                    <img src="/public/img/flags/de.jpg" alt="de-flag" class="me-1" height="12"> <span class="align-middle">German</span>
+                    <img src="/public/img/flags/de.jpg" alt="de-flag" class="me-1" height="12">
+                    <span class="align-middle">German</span>
                   </a>
                   <a @click.prevent="changeLanguage('it')" class="dropdown-item">
-                    <img src="/public/img/flags/it.jpg" alt="italian-flag" class="me-1" height="12"> <span class="align-middle">Italian</span>
+                    <img src="/public/img/flags/it.jpg" alt="italian-flag" class="me-1" height="12">
+                    <span class="align-middle">Italian</span>
                   </a>
                   <a @click.prevent="changeLanguage('es')" class="dropdown-item">
-                    <img src="/public/img/flags/es.jpg" alt="spanish-flag" class="me-1" height="12"> <span class="align-middle">Spanish</span>
+                    <img src="/public/img/flags/es.jpg" alt="spanish-flag" class="me-1" height="12">
+                    <span class="align-middle">Spanish</span>
                   </a>
                   <a @click.prevent="changeLanguage('ru')" class="dropdown-item">
-                    <img src="/public/img/flags/ru.jpg" alt="russian-flag" class="me-1" height="12"> <span class="align-middle">Russian</span>
+                    <img src="/public/img/flags/ru.jpg" alt="russian-flag" class="me-1" height="12">
+                    <span class="align-middle">Russian</span>
                   </a>
                 </div>
               </li>
@@ -44,13 +59,20 @@
               </li>
 
               <li class="dropdown">
-                <a class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
+                <a
+                    class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light"
+                    data-bs-toggle="dropdown"
+                    href="#"
+                    role="button"
+                    aria-haspopup="false"
+                    aria-expanded="false"
+                >
                   <img src="/public/img/users/avatar-4.jpg" alt="user-image" class="rounded-circle">
                   <span class="ms-1 d-none d-md-inline-block">Jamie D. <i class="mdi mdi-chevron-down"></i></span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-end profile-dropdown ">
+                <div class="dropdown-menu dropdown-menu-end profile-dropdown">
                   <div class="dropdown-header noti-title">
-                    <h6 class="text-overflow m-0">Welcome !</h6>
+                    <h6 class="text-overflow m-0">Welcome!</h6>
                   </div>
                   <a href="javascript:void(0);" class="dropdown-item notify-item">
                     <i class="fe-user"></i><span>My Account</span>
@@ -77,36 +99,42 @@
 </template>
 
 <script>
-import { Inertia } from "@inertiajs/inertia";
-import axios from 'axios';
+import { usePage } from '@inertiajs/inertia-vue3';
+import { useLanguageStore } from '../../stores/useLanguageStore';
+import i18n from '../../i18n';
 
 export default {
   name: "Header",
-  data() {
-    console.log(this.$page.props.currentLang);
-    return {
-      dropdownVisible: false,
-      currentLang: this.$page.props.currentLang || 'ru', // Дефолтный язык
-      currentFlag: `/img/flags/${this.$page.props.currentLang || 'ru'}.jpg`,
+  setup() {
+    const languageStore = useLanguageStore();
+    const page = usePage();
+
+    // Устанавливаем язык из props при загрузке
+    const currentLang = page.props.value.currentLang || 'ru'; // Дефолтный язык
+
+    // Синхронизируем локаль i18n с текущим языком
+    if (i18n.global.locale !== currentLang) {
+      i18n.global.locale = currentLang;
+    }
+
+    languageStore.currentLang = currentLang;
+    languageStore.currentFlag = `/img/flags/${currentLang}.jpg`;
+
+    const toggleDropdown = () => {
+      languageStore.dropdownVisible = !languageStore.dropdownVisible;
     };
-  },
-  methods: {
-    navigateTo(route) {
-      Inertia.visit(route);
-    },
-    toggleDropdown() {
-      this.dropdownVisible = !this.dropdownVisible;
-      console.log("Dropdown visibility:", this.dropdownVisible);
-    },
-    async changeLanguage(lang) {
-      try {
-        await axios.post('/api/change-language', { lang });
-        this.currentLang = lang;
-        this.currentFlag = `/img/flags/${lang}.jpg?timestamp=${new Date().getTime()}`; // Уникальный параметр для избежания кэша
-      } catch (error) {
-        console.error("Ошибка при смене языка:", error);
-      }
-    },
+
+    const changeLanguage = async (lang) => {
+      await languageStore.changeLanguage(lang); // Меняем язык
+      languageStore.dropdownVisible = false; // Закрываем выпадающее меню
+    };
+
+
+    return {
+      languageStore,
+      toggleDropdown,
+      changeLanguage,
+    };
   },
 };
 </script>
@@ -269,6 +297,9 @@ html[data-bs-theme="dark"] #light-dark-mode .bx-moon::before {
 .dropdown-menu.show {
   visibility: visible;
   opacity: 1;
+}
+.dropdown-item {
+  cursor: pointer;
 }
 
 .navbar-custom .dropdown-menu-animated {

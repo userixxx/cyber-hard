@@ -1,0 +1,14 @@
+{
+  "welcome": "Welcome",
+  "my_account": "My Account",
+  "settings": "Settings",
+  "lock_screen": "Lock Screen",
+  "logout": "Logout",
+  "fullscreen": "Fullscreen",
+  "languages": {
+    "german": "German",
+    "italian": "Italian",
+    "spanish": "Spanish",
+    "russian": "Russian"
+  }
+}
