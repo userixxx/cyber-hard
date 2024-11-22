@@ -28,9 +28,11 @@
                     aria-haspopup="false"
                     aria-expanded="false"
                 >
-                  <img :src="languageStore.currentFlag" :alt="languageStore.currentLang" class="me-0 me-sm-1" height="18">
+                  <img :src="languageStore.currentFlag" :alt="languageStore.currentLang" class="me-0 me-sm-1"
+                       height="18">
                 </a>
-                <div :class="['dropdown-menu', 'dropdown-menu-end', 'dropdown-menu-animated', { show: languageStore.dropdownVisible }]">
+                <div
+                    :class="['dropdown-menu', 'dropdown-menu-end', 'dropdown-menu-animated', { show: languageStore.dropdownVisible }]">
                   <a @click.prevent="changeLanguage('en')" class="dropdown-item">
                     <img src="/public/img/flags/en.jpg" alt="de-flag" class="me-1" height="12">
                     <span class="align-middle">English</span>
@@ -80,8 +82,8 @@
 </template>
 
 <script>
-import { usePage } from '@inertiajs/inertia-vue3';
-import { useLanguageStore } from '../../stores/useLanguageStore';
+import {usePage} from '@inertiajs/inertia-vue3';
+import {useLanguageStore} from '../../stores/useLanguageStore';
 import i18n from '../../i18n';
 
 export default {
@@ -279,6 +281,7 @@ html[data-bs-theme="dark"] #light-dark-mode .bx-moon::before {
   visibility: visible;
   opacity: 1;
 }
+
 .dropdown-item {
   cursor: pointer;
 }
