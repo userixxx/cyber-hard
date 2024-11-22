@@ -60,7 +60,7 @@
 
               <li class="dropdown">
                 <a
-                    class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light"
+                    class="nav-link  nav-user me-0 waves-effect waves-light"
                     data-bs-toggle="dropdown"
                     href="#"
                     role="button"
@@ -68,26 +68,7 @@
                     aria-expanded="false"
                 >
                   <img src="/public/img/users/avatar-4.jpg" alt="user-image" class="rounded-circle">
-                  <span class="ms-1 d-none d-md-inline-block">Jamie D. <i class="mdi mdi-chevron-down"></i></span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-end profile-dropdown">
-                  <div class="dropdown-header noti-title">
-                    <h6 class="text-overflow m-0">Welcome!</h6>
-                  </div>
-                  <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="fe-user"></i><span>My Account</span>
-                  </a>
-                  <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="fe-settings"></i><span>Settings</span>
-                  </a>
-                  <a class="dropdown-item notify-item" href="/dashtrap/pages-lock-screen">
-                    <i class="fe-lock"></i><span>Lock Screen</span>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item notify-item" href="/dashtrap/pages-login">
-                    <i class="fe-log-out"></i><span>Logout</span>
-                  </a>
-                </div>
               </li>
 
             </ul>
