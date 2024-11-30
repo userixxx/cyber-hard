@@ -28,24 +28,14 @@
                     aria-haspopup="false"
                     aria-expanded="false"
                 >
-                  <img :src="languageStore.currentFlag" :alt="languageStore.currentLang" class="me-0 me-sm-1" height="18">
+                  <img :src="languageStore.currentFlag" :alt="languageStore.currentLang" class="me-0 me-sm-1"
+                       height="18">
                 </a>
-                <div :class="['dropdown-menu', 'dropdown-menu-end', 'dropdown-menu-animated', { show: languageStore.dropdownVisible }]">
+                <div
+                    :class="['dropdown-menu', 'dropdown-menu-end', 'dropdown-menu-animated', { show: languageStore.dropdownVisible }]">
                   <a @click.prevent="changeLanguage('en')" class="dropdown-item">
                     <img src="/public/img/flags/en.jpg" alt="de-flag" class="me-1" height="12">
                     <span class="align-middle">English</span>
-                  </a>
-                  <a @click.prevent="changeLanguage('de')" class="dropdown-item">
-                    <img src="/public/img/flags/de.jpg" alt="de-flag" class="me-1" height="12">
-                    <span class="align-middle">German</span>
-                  </a>
-                  <a @click.prevent="changeLanguage('it')" class="dropdown-item">
-                    <img src="/public/img/flags/it.jpg" alt="italian-flag" class="me-1" height="12">
-                    <span class="align-middle">Italian</span>
-                  </a>
-                  <a @click.prevent="changeLanguage('es')" class="dropdown-item">
-                    <img src="/public/img/flags/es.jpg" alt="spanish-flag" class="me-1" height="12">
-                    <span class="align-middle">Spanish</span>
                   </a>
                   <a @click.prevent="changeLanguage('ru')" class="dropdown-item">
                     <img src="/public/img/flags/ru.jpg" alt="russian-flag" class="me-1" height="12">
@@ -60,7 +50,7 @@
 
               <li class="dropdown">
                 <a
-                    class="nav-link dropdown-toggle nav-user me-0 waves-effect waves-light"
+                    class="nav-link  nav-user me-0 waves-effect waves-light"
                     data-bs-toggle="dropdown"
                     href="#"
                     role="button"
@@ -68,26 +58,7 @@
                     aria-expanded="false"
                 >
                   <img src="/public/img/users/avatar-4.jpg" alt="user-image" class="rounded-circle">
-                  <span class="ms-1 d-none d-md-inline-block">Jamie D. <i class="mdi mdi-chevron-down"></i></span>
                 </a>
-                <div class="dropdown-menu dropdown-menu-end profile-dropdown">
-                  <div class="dropdown-header noti-title">
-                    <h6 class="text-overflow m-0">Welcome!</h6>
-                  </div>
-                  <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="fe-user"></i><span>My Account</span>
-                  </a>
-                  <a href="javascript:void(0);" class="dropdown-item notify-item">
-                    <i class="fe-settings"></i><span>Settings</span>
-                  </a>
-                  <a class="dropdown-item notify-item" href="/dashtrap/pages-lock-screen">
-                    <i class="fe-lock"></i><span>Lock Screen</span>
-                  </a>
-                  <div class="dropdown-divider"></div>
-                  <a class="dropdown-item notify-item" href="/dashtrap/pages-login">
-                    <i class="fe-log-out"></i><span>Logout</span>
-                  </a>
-                </div>
               </li>
 
             </ul>
@@ -99,8 +70,8 @@
 </template>
 
 <script>
-import { usePage } from '@inertiajs/inertia-vue3';
-import { useLanguageStore } from '../../stores/useLanguageStore';
+import {usePage} from '@inertiajs/inertia-vue3';
+import {useLanguageStore} from '../../stores/useLanguageStore';
 import i18n from '../../i18n';
 
 export default {
@@ -298,6 +269,7 @@ html[data-bs-theme="dark"] #light-dark-mode .bx-moon::before {
   visibility: visible;
   opacity: 1;
 }
+
 .dropdown-item {
   cursor: pointer;
 }
