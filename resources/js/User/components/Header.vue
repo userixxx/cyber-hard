@@ -37,18 +37,6 @@
                     <img src="/public/img/flags/en.jpg" alt="de-flag" class="me-1" height="12">
                     <span class="align-middle">English</span>
                   </a>
-                  <a @click.prevent="changeLanguage('de')" class="dropdown-item">
-                    <img src="/public/img/flags/de.jpg" alt="de-flag" class="me-1" height="12">
-                    <span class="align-middle">German</span>
-                  </a>
-                  <a @click.prevent="changeLanguage('it')" class="dropdown-item">
-                    <img src="/public/img/flags/it.jpg" alt="italian-flag" class="me-1" height="12">
-                    <span class="align-middle">Italian</span>
-                  </a>
-                  <a @click.prevent="changeLanguage('es')" class="dropdown-item">
-                    <img src="/public/img/flags/es.jpg" alt="spanish-flag" class="me-1" height="12">
-                    <span class="align-middle">Spanish</span>
-                  </a>
                   <a @click.prevent="changeLanguage('ru')" class="dropdown-item">
                     <img src="/public/img/flags/ru.jpg" alt="russian-flag" class="me-1" height="12">
                     <span class="align-middle">Russian</span>
